@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import InputBoard from "./Components/InputBox/InputBoard";
+import TaskList from "./Components/TaskBoard/TaskList";
 
 function App() {
+
+  const [tasks,setTasks] = useState([])
+
+  const goalHandler=(enteredValue)=>{
+    setTasks(prev=>{
+      const newTasks = [...prev];
+      newTasks.unshift({task:enteredValue,id:Math.random().toString()})
+      return newTasks;
+    })
+  }
+
+  const deletionHandler=(id)=>{
+    setTasks(tasks.filter(task=>task.id!==id))
+  }
+
+  let content = <p style={{textAlign:'center', fontSize:'1.5rem' }}>No taks to do. May be add some?</p>
+  if (tasks.length>0){
+    content = <TaskList tasks={tasks} removeTask={deletionHandler}/>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <InputBoard onAddgoal={goalHandler}/>
+      {content}
     </div>
   );
 }
