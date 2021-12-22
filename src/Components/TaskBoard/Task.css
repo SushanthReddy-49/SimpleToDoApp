@@ -1,7 +1,25 @@
 .task-item{
+    display: flex;
+    justify-content: space-between;
     color: white;
     width: 30rem;
     background: #8b005d;
     margin: 5px auto;
     padding: 1rem 1.5rem;
+}
+
+.delete{
+    width: 1.5rem;
+    height:1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-button{
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    zoom: 120%;
 }
