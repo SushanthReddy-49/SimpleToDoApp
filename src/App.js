@@ -25,8 +25,12 @@ function App() {
 
   return (
     <div>
+      <div>
       <InputBoard onAddgoal={goalHandler}/>
-      {content}
+      </div>
+      <div style={{maxWidth:'90%', margin:'0px auto'}}>
+        {content}
+      </div>
     </div>
   );
 }

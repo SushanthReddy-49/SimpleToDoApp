@@ -6,15 +6,15 @@ import { FaExclamationCircle } from "react-icons/fa";
 const FormControl = styled.div`
   margin: 8px 0;
 
-  div{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .alert{
-    display:${props=>props.valid?'none':'inline-block'};
-    margin:0 1px;
+  .alert {
+    display: ${(props) => (props.valid ? "none" : "inline-block")};
+    margin: 0 1px;
   }
 
   label {
@@ -26,8 +26,8 @@ const FormControl = styled.div`
 
   input {
     display: inline-block;
-    margin-right:${props=>props.valid?'0px':'1px'};
-    flex:1;
+    margin-right: ${(props) => (props.valid ? "0px" : "1px")};
+    flex: 1;
     width: 70%;
     line-height: 1.5rem;
     border: 1px solid ${(props) => (props.valid ? "#ccc" : "red")};
@@ -64,9 +64,9 @@ const InputBoard = (props) => {
       <form onSubmit={addGoalHandler}>
         <FormControl valid={isValid}>
           <label>Course Goal</label>
-          <div className='input-box'>
+          <div className="input-box">
             <input type="text" value={input} onChange={inputHandler} />
-            <FaExclamationCircle style={{color:'red'}} className="alert" />
+            <FaExclamationCircle style={{ color: "red" }} className="alert" />
           </div>
         </FormControl>
         <button type="submit" className="button">
