@@ -8,7 +8,7 @@ const Task = (props) => {
   };
   return (
     <li className="task-item">
-      {props.content}
+      <div className="content">{props.content}</div>
       <div className="delete">
         <FaTrash className="delete-button" onClick={deleteHandler} />
       </div>

@@ -1,12 +1,17 @@
 .task-item {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   color: white;
   width: 30rem;
-  max-width: 90%;
+  max-width: 100%;
   background: #8b005d;
   margin: 5px auto;
   padding: 1rem 1.5rem;
+}
+
+.content{
+  max-width: 90%;
 }
 
 .task-item:hover .delete {
